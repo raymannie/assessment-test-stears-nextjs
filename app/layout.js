@@ -1,13 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Red_Hat_Text } from "next/font/google";
 import "./globals.css";
+import ProtectedLayout from "@/provider/ProtectedLayout";
+import AuthSession from "@/provider/AuthSession";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const redHatText = Red_Hat_Text({
+  variable: "--font-red-hat-text",
   subsets: ["latin"],
 });
 
@@ -19,10 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${redHatText.variable} antialiased`}>
+        <AuthSession>
+          <ProtectedLayout>{children}</ProtectedLayout>
+        </AuthSession>
       </body>
     </html>
   );
