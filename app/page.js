@@ -2,7 +2,6 @@
 import ArticleBlock from "@/components/ArticleBlock";
 import SignOutButton from "@/components/SignOutButton";
 import { getServerSession } from "next-auth";
-import Image from "next/image";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function HomePage() {
@@ -12,7 +11,7 @@ export default async function HomePage() {
       slug: "buharis-scorecard-any-hits-or-all-misses",
       imageUrl:
         "https://cdn.prod.website-files.com/64be7b4d0273fe7be7c24b6f/671fa8ea1ad3e6de29b71ea0_Banking-p-500.jpg",
-      title: "Buhari’s scorecard: Any hits or all misses?",
+      title: "Buhari's scorecard: Any hits or all misses?",
       summary:
         "Nigeria's president has struggled with implementing many of his creative and solution-oriented promises.",
       author: "The Newsroom",
@@ -34,7 +33,6 @@ export default async function HomePage() {
     <div>
       <div className="flex justify-between items-center">
         <p>Welcome, {session?.user?.name}!</p>
-        {/* {session.user.name} */}
         <SignOutButton />
       </div>
 

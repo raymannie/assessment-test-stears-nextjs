@@ -6,15 +6,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-  //   resolve: {
-  //     alias: {
-  //       "@": path.resolve(__dirname, "./"), // Ensure this points to your src directory
-  //     },
-  //   },
   test: {
     environment: "jsdom",
     globals: true,
-
-    // setupFiles: "./setupTests.js",
   },
 });

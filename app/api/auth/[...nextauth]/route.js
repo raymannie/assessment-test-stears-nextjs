@@ -21,14 +21,14 @@ export const authOptions = {
       credentials: {
         email: {
           label: "Email",
-          type: "email",
+          type: "text",
           placeholder: "you@example.com",
         },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         try {
-          const res = await fetch("http://localhost:3000/api/users");
+          const res = await fetch(`${process.env.NEXTAUTH_URL}/api/users`);
           const users = await res.json();
 
           const user = users.find((u) => u.email === credentials.email);
