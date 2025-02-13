@@ -15,7 +15,6 @@ export default function SignUp() {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
 
-    // Validate field and update errors
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: validateFields({ [name]: value })[name] || "",
@@ -26,7 +25,6 @@ export default function SignUp() {
     async (e) => {
       e.preventDefault();
 
-      // Validate entire form
       const validationErrors = validateFields(form);
       if (Object.keys(validationErrors).length > 0) {
         setErrors(validationErrors);

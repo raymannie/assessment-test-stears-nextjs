@@ -1,11 +1,8 @@
 "use server";
 import ArticleBlock from "@/components/ArticleBlock";
 import SignOutButton from "@/components/SignOutButton";
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 
 export default async function HomePage() {
-  const session = await getServerSession(authOptions);
   const articles = [
     {
       slug: "buharis-scorecard-any-hits-or-all-misses",
@@ -32,7 +29,7 @@ export default async function HomePage() {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <p>Welcome, {session?.user?.name}!</p>
+        <p>Welcome!</p>
         <SignOutButton />
       </div>
 
